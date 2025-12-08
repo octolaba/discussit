@@ -1,0 +1,19 @@
+✔ replay excludes future comments and reactions without modifying the log (4.56875ms)
+✔ resolve/reopen and reaction removal remain visible at historical cutoffs (0.469833ms)
+✔ new snapshot leaves original anchor and comment context intact (0.116958ms)
+✔ fork has independent resolution and preserves origin (0.111125ms)
+✔ repeated command is idempotent and mismatching retry is rejected (0.157042ms)
+✔ archive round trip reproduces state and rejects duplicate event IDs (0.312375ms)
+✔ archive rejects wrong quote and broken parent references (0.271167ms)
+✔ code point anchors preserve emoji, CRLF and repeated quote positions (0.0895ms)
+✔ archive rejects untrusted agent status and nonnumeric context bound (0.203375ms)
+✔ folder storage preference applies to existing and later documents in that folder (0.137083ms)
+✔ archive rejects nonstring response requestId before rendering (0.234791ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 81.475666

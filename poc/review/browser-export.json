@@ -1,0 +1,593 @@
+{
+  "format": "discuss-demo/1",
+  "exportedAt": "2026-10-06T09:11:45.729Z",
+  "events": [
+    {
+      "schemaVersion": 1,
+      "eventId": "b799ad37-1c97-40fa-959a-a7cbb3e5c829",
+      "commandId": "41d7ae1e-6440-4a81-8042-2ae675829bff",
+      "seq": 1,
+      "recordedAt": "2026-10-06T08:40:00.000Z",
+      "actor": "Камиль",
+      "type": "document.opened",
+      "payload": {
+        "id": "doc-demo",
+        "name": "proposal.md",
+        "path": "~/Documents/proposal.md",
+        "folderId": "demo-documents",
+        "folderPath": "~/Documents",
+        "storage": "central"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "667cb71e-436d-4c75-81f3-073afadd7f10",
+      "commandId": "033debcf-9311-45e5-bf20-ae0727045271",
+      "seq": 2,
+      "recordedAt": "2026-10-06T08:40:13.000Z",
+      "actor": "Файл",
+      "type": "snapshot.captured",
+      "payload": {
+        "id": "s1",
+        "documentId": "doc-demo",
+        "label": "S1",
+        "text": "# Предложение: обсуждение документов\n\nОдин файл. Общий контекст.\n\nМы обсуждаем фрагменты Markdown и текстовых файлов вместе с агентами. Сам документ остаётся в привычном редакторе.\n\n## Доставка комментариев\n\nКаждый новый комментарий доставляется агенту ровно один раз.\n\nУпоминание @claude/reviewer приглашает специалиста в обсуждение. Ответ появляется рядом с исходным вопросом.\n\n## История и контекст\n\nОбсуждение привязано к снимку документа. Если текст изменился, старые комментарии можно прочитать в прежнем контексте.\n\n## Хранение\n\nКомментарии и снимки храним рядом с документом или в общем локальном хранилище.\n\nРешение о закрытии обсуждения остаётся за человеком.\n"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "ace2b654-73e5-4262-bc2a-6e5b4970c6b0",
+      "commandId": "969b5a98-b9e2-4c7c-b19b-2a03ce9328d7",
+      "seq": 3,
+      "recordedAt": "2026-10-06T08:40:26.000Z",
+      "actor": "Камиль",
+      "type": "thread.created",
+      "payload": {
+        "id": "t1",
+        "documentId": "doc-demo",
+        "snapshotId": "s1",
+        "start": 208,
+        "end": 268,
+        "quote": "Каждый новый комментарий доставляется агенту ровно один раз."
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "0ce14927-eee5-414e-9fb4-43fa91df17ba",
+      "commandId": "61956ab8-2549-40c7-ab34-a8c941928e64",
+      "seq": 4,
+      "recordedAt": "2026-10-06T08:40:39.000Z",
+      "actor": "Камиль",
+      "type": "comment.created",
+      "payload": {
+        "id": "c1",
+        "threadId": "t1",
+        "parentId": null,
+        "actor": "Камиль",
+        "body": "@claude/reviewer А если соединение прервётся после доставки? Давай проверим гарантию.",
+        "snapshotId": "s1",
+        "throughSeq": 3
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "18c58d76-27a5-4a54-9dfd-19ea24396e16",
+      "commandId": "13ed3c8c-8af6-4137-b038-4f4d1b81f828",
+      "seq": 5,
+      "recordedAt": "2026-10-06T08:40:52.000Z",
+      "actor": "Claude · reviewer",
+      "type": "comment.created",
+      "payload": {
+        "id": "c2",
+        "threadId": "t1",
+        "parentId": "c1",
+        "actor": "Claude · reviewer",
+        "body": "Предлагаю at-least-once и дедупликацию по requestId. Между внешним вызовом и подтверждением остаётся окно неопределённости — его стоит показать в интерфейсе.",
+        "snapshotId": "s1",
+        "throughSeq": 4
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "a8ba1a72-65bf-4426-8de2-88796c395dbd",
+      "commandId": "f239e69b-46e5-4360-afca-e55b82971ebd",
+      "seq": 6,
+      "recordedAt": "2026-10-06T08:41:05.000Z",
+      "actor": "Камиль",
+      "type": "reaction.set",
+      "payload": {
+        "commentId": "c2",
+        "actor": "Камиль",
+        "emoji": "👍",
+        "active": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "b426b6d3-8054-4158-826d-212ab1b25385",
+      "commandId": "6c6120d3-c8bb-4a84-8e28-c48451c930e3",
+      "seq": 7,
+      "recordedAt": "2026-10-06T09:11:34.314Z",
+      "actor": "Камиль",
+      "type": "thread.created",
+      "payload": {
+        "id": "7c0f2113-e44a-4451-a797-924694eb4c73",
+        "documentId": "doc-demo",
+        "snapshotId": "s1",
+        "start": 536,
+        "end": 615,
+        "quote": "Комментарии и снимки храним рядом с документом или в общем локальном хранилище."
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "98dedbc1-c731-45c1-9824-56abd57cca3c",
+      "commandId": "1b86e702-898d-437d-9021-524eaa292e95",
+      "seq": 8,
+      "recordedAt": "2026-10-06T09:11:34.315Z",
+      "actor": "Камиль",
+      "type": "comment.created",
+      "payload": {
+        "id": "55d0e736-717e-4334-8e0a-d19f725f1ecc",
+        "threadId": "7c0f2113-e44a-4451-a797-924694eb4c73",
+        "parentId": null,
+        "actor": "Камиль",
+        "body": "@codex/architect Как переносить историю?",
+        "snapshotId": "s1",
+        "throughSeq": 7
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "d93039b5-acdc-4159-8708-ee5c990df441",
+      "commandId": "13f0fdab-7518-4419-aab9-8bfc18a76072",
+      "seq": 9,
+      "recordedAt": "2026-10-06T09:11:34.316Z",
+      "actor": "Система",
+      "type": "agent.requested",
+      "payload": {
+        "id": "7b10675d-bc0b-4df8-8ff6-e2db7ba1d955",
+        "threadId": "7c0f2113-e44a-4451-a797-924694eb4c73",
+        "commentId": "55d0e736-717e-4334-8e0a-d19f725f1ecc",
+        "agent": "@codex/architect",
+        "snapshotId": "s1",
+        "throughSeq": 8,
+        "route": "native-child"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "71ae25c3-403f-4137-aa8a-82dda0ed1d43",
+      "commandId": "915c8293-9ff9-447d-bc35-fa23f0f55ef2",
+      "seq": 10,
+      "recordedAt": "2026-10-06T09:11:34.818Z",
+      "actor": "@codex/architect",
+      "type": "agent.status",
+      "payload": {
+        "id": "7b10675d-bc0b-4df8-8ff6-e2db7ba1d955",
+        "status": "parent-accepted",
+        "receipt": "parent-accepted"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "f129d27e-c502-48d1-9209-c99f2dff4245",
+      "commandId": "5a5a0d97-3276-48a6-a270-2fe22154b969",
+      "seq": 11,
+      "recordedAt": "2026-10-06T09:11:35.320Z",
+      "actor": "@codex/architect",
+      "type": "agent.status",
+      "payload": {
+        "id": "7b10675d-bc0b-4df8-8ff6-e2db7ba1d955",
+        "status": "child-confirmed",
+        "receipt": "child-confirmed"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "64bf8c80-a729-4f1e-87d7-910b3c0be76a",
+      "commandId": "8a266e61-599d-4bc5-b179-b3f22952202f",
+      "seq": 12,
+      "recordedAt": "2026-10-06T09:11:36.020Z",
+      "actor": "@codex/architect",
+      "type": "agent.status",
+      "payload": {
+        "id": "7b10675d-bc0b-4df8-8ff6-e2db7ba1d955",
+        "status": "running"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "00c6ff59-2cc9-4b34-9ea2-92b84472ce16",
+      "commandId": "287cbeb3-ebcf-4c5a-97be-945722ca8c88",
+      "seq": 13,
+      "recordedAt": "2026-10-06T09:11:37.019Z",
+      "actor": "Codex · architect",
+      "type": "comment.created",
+      "payload": {
+        "id": "d98a80fe-892f-41e2-93e2-fe20a13e7678",
+        "threadId": "7c0f2113-e44a-4451-a797-924694eb4c73",
+        "parentId": "55d0e736-717e-4334-8e0a-d19f725f1ecc",
+        "actor": "Codex · architect",
+        "body": "Предлагаю провести команду через единое ядро: записать событие, обновить проекцию и отправить запрос через outbox. UI и CLI используют один контракт. Это демонстрационный ответ architect.",
+        "snapshotId": "s1",
+        "throughSeq": 8,
+        "requestId": "7b10675d-bc0b-4df8-8ff6-e2db7ba1d955",
+        "responderKind": "native-child"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "7f3465bd-2bab-4c76-b5f2-615587b4ffe3",
+      "commandId": "5d261768-fb67-4277-84d4-fc6fa99ad512",
+      "seq": 14,
+      "recordedAt": "2026-10-06T09:11:37.023Z",
+      "actor": "Codex · architect",
+      "type": "agent.status",
+      "payload": {
+        "id": "7b10675d-bc0b-4df8-8ff6-e2db7ba1d955",
+        "status": "completed",
+        "receipt": "child-replied"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "d41a7133-8427-40b3-ab71-9503009b6d56",
+      "commandId": "a920469e-260e-421a-9ff9-a5cef4df856d",
+      "seq": 15,
+      "recordedAt": "2026-10-06T09:11:37.097Z",
+      "actor": "Камиль",
+      "type": "comment.created",
+      "payload": {
+        "id": "ecaa8224-fe2b-4392-be40-54f676cea698",
+        "threadId": "7c0f2113-e44a-4451-a797-924694eb4c73",
+        "parentId": "d98a80fe-892f-41e2-93e2-fe20a13e7678",
+        "actor": "Камиль",
+        "body": "Уточни, как работает экспорт.",
+        "snapshotId": "s1",
+        "throughSeq": 14
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "13870519-5955-425a-bf45-470177ee9bc4",
+      "commandId": "adc708cb-912a-422d-89db-74ef3d427cc8",
+      "seq": 16,
+      "recordedAt": "2026-10-06T09:11:37.100Z",
+      "actor": "Система",
+      "type": "agent.requested",
+      "payload": {
+        "id": "0f4ce7b0-c4cb-4ece-8f56-785fced116b8",
+        "threadId": "7c0f2113-e44a-4451-a797-924694eb4c73",
+        "commentId": "ecaa8224-fe2b-4392-be40-54f676cea698",
+        "agent": "@codex/architect",
+        "snapshotId": "s1",
+        "throughSeq": 15,
+        "route": "native-child"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "b4148934-bde7-4f7b-bec9-16fca61220b4",
+      "commandId": "5c72736a-dbe2-412a-8c8b-8abee1269c12",
+      "seq": 17,
+      "recordedAt": "2026-10-06T09:11:37.604Z",
+      "actor": "@codex/architect",
+      "type": "agent.status",
+      "payload": {
+        "id": "0f4ce7b0-c4cb-4ece-8f56-785fced116b8",
+        "status": "parent-accepted",
+        "receipt": "parent-accepted"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "6de82fc4-52c4-476c-b949-75e058e8dd7a",
+      "commandId": "fc3643b7-2549-4a81-bbc9-c10415f5f074",
+      "seq": 18,
+      "recordedAt": "2026-10-06T09:11:38.105Z",
+      "actor": "@codex/architect",
+      "type": "agent.status",
+      "payload": {
+        "id": "0f4ce7b0-c4cb-4ece-8f56-785fced116b8",
+        "status": "child-confirmed",
+        "receipt": "child-confirmed"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "d5701f84-cfb9-48cd-875a-873bb343788d",
+      "commandId": "231256ea-1ed1-4e57-9a20-d2d9d6d1291c",
+      "seq": 19,
+      "recordedAt": "2026-10-06T09:11:38.804Z",
+      "actor": "@codex/architect",
+      "type": "agent.status",
+      "payload": {
+        "id": "0f4ce7b0-c4cb-4ece-8f56-785fced116b8",
+        "status": "running"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "edba02bd-90eb-4a72-a7ce-13a2686f96d0",
+      "commandId": "8c878857-e8dc-4cb6-a53a-408ca4c0d62a",
+      "seq": 20,
+      "recordedAt": "2026-10-06T09:11:39.805Z",
+      "actor": "Codex · architect",
+      "type": "comment.created",
+      "payload": {
+        "id": "a5a608e4-c06e-45f6-832d-e114008908b4",
+        "threadId": "7c0f2113-e44a-4451-a797-924694eb4c73",
+        "parentId": "ecaa8224-fe2b-4392-be40-54f676cea698",
+        "actor": "Codex · architect",
+        "body": "Предлагаю провести команду через единое ядро: записать событие, обновить проекцию и отправить запрос через outbox. UI и CLI используют один контракт. Это демонстрационный ответ architect.",
+        "snapshotId": "s1",
+        "throughSeq": 15,
+        "requestId": "0f4ce7b0-c4cb-4ece-8f56-785fced116b8",
+        "responderKind": "native-child"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "08c3aab8-5681-483b-8870-11cfd76661d3",
+      "commandId": "b0a2bf95-40c1-49ac-9a38-3df3d02b7c93",
+      "seq": 21,
+      "recordedAt": "2026-10-06T09:11:39.808Z",
+      "actor": "Codex · architect",
+      "type": "agent.status",
+      "payload": {
+        "id": "0f4ce7b0-c4cb-4ece-8f56-785fced116b8",
+        "status": "completed",
+        "receipt": "child-replied"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "0cf71c13-7d5c-400b-9105-5ec849aa24b0",
+      "commandId": "b4f52476-3cdd-4415-bd48-fbc1ddbc973c",
+      "seq": 22,
+      "recordedAt": "2026-10-06T09:11:39.881Z",
+      "actor": "Камиль",
+      "type": "thread.forked",
+      "payload": {
+        "id": "ac49e5aa-ca11-43ed-baaf-f0d32e21ef19",
+        "documentId": "doc-demo",
+        "snapshotId": "s1",
+        "start": 536,
+        "end": 615,
+        "quote": "Комментарии и снимки храним рядом с документом или в общем локальном хранилище.",
+        "forkedFromCommentId": "55d0e736-717e-4334-8e0a-d19f725f1ecc"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "2a4754be-70ee-4042-bad1-bdc5fd4027cf",
+      "commandId": "1f1a9e4d-61fc-4861-adf9-634565dc3d3b",
+      "seq": 23,
+      "recordedAt": "2026-10-06T09:11:39.884Z",
+      "actor": "Камиль",
+      "type": "comment.created",
+      "payload": {
+        "id": "23e22d21-a134-4558-9cc5-b9afbf101b39",
+        "threadId": "ac49e5aa-ca11-43ed-baaf-f0d32e21ef19",
+        "parentId": null,
+        "actor": "Камиль",
+        "body": "Отдельно обсудим резервную копию.",
+        "snapshotId": "s1",
+        "throughSeq": 22
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "0c91750c-4d10-424a-a569-e33820fdb605",
+      "commandId": "7411cc81-01d0-4426-bb69-32946cdf188b",
+      "seq": 24,
+      "recordedAt": "2026-10-06T09:11:39.930Z",
+      "actor": "Камиль",
+      "type": "thread.resolved",
+      "payload": {
+        "threadId": "ac49e5aa-ca11-43ed-baaf-f0d32e21ef19"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "334ea8df-138b-48fb-9553-42607c27bf61",
+      "commandId": "89e3365b-d149-43a5-a544-6d342692f9de",
+      "seq": 25,
+      "recordedAt": "2026-10-06T09:11:39.964Z",
+      "actor": "Камиль",
+      "type": "thread.reopened",
+      "payload": {
+        "threadId": "ac49e5aa-ca11-43ed-baaf-f0d32e21ef19"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "ab3bee3b-4090-4e37-9070-769c420d5709",
+      "commandId": "9b5b8606-bf2a-4f86-bfd2-85235f8d2508",
+      "seq": 26,
+      "recordedAt": "2026-10-06T09:11:39.998Z",
+      "actor": "Камиль",
+      "type": "reaction.set",
+      "payload": {
+        "commentId": "23e22d21-a134-4558-9cc5-b9afbf101b39",
+        "actor": "Камиль",
+        "emoji": "💡",
+        "active": true
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "d3399ff9-cffa-49c0-959a-8f532c7ea63c",
+      "commandId": "8fe042f9-71de-4393-894a-02ddd654506e",
+      "seq": 27,
+      "recordedAt": "2026-10-06T09:11:40.029Z",
+      "actor": "Камиль",
+      "type": "reaction.set",
+      "payload": {
+        "commentId": "23e22d21-a134-4558-9cc5-b9afbf101b39",
+        "actor": "Камиль",
+        "emoji": "💡",
+        "active": false
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "96a8f501-480d-4ca6-b3c1-d74154d6a2da",
+      "commandId": "c8bd9743-830c-401b-90c2-b03f6e5be44b",
+      "seq": 28,
+      "recordedAt": "2026-10-06T09:11:40.064Z",
+      "actor": "Файл",
+      "type": "snapshot.captured",
+      "payload": {
+        "id": "f2886bc7-1385-44f4-9b07-bf90f087722f",
+        "documentId": "doc-demo",
+        "label": "S2",
+        "text": "# Предложение: обсуждение документов\n\nОдин файл. Общий контекст. Сохраняем каждый обсуждаемый снимок.\n\nМы обсуждаем фрагменты Markdown и текстовых файлов вместе с агентами. Сам документ остаётся в привычном редакторе.\n\n## Доставка комментариев\n\nДоставка работает как at-least-once. Повторные события распознаются по eventId, а ответы — по requestId.\n\nУпоминание @claude/reviewer приглашает специалиста в обсуждение. Ответ появляется рядом с исходным вопросом.\n\n## История и контекст\n\nОбсуждение привязано к снимку документа. Если текст изменился, старые комментарии можно прочитать в прежнем контексте.\n\n## Хранение\n\nКомментарии и снимки храним рядом с документом или в общем локальном хранилище.\n\nРешение о закрытии обсуждения остаётся за человеком.\n"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "5cc6c732-021d-420e-a25a-4f362aa20dca",
+      "commandId": "2d1a37d2-eeb0-4668-8449-69e2f6cb9ea4",
+      "seq": 29,
+      "recordedAt": "2026-10-06T09:11:40.380Z",
+      "actor": "Камиль",
+      "type": "comment.created",
+      "payload": {
+        "id": "1d575ab7-ec1f-45cc-b44c-f65f1ded2363",
+        "threadId": "t1",
+        "parentId": null,
+        "actor": "Камиль",
+        "body": "Комментарий во время паузы подписки.",
+        "snapshotId": "f2886bc7-1385-44f4-9b07-bf90f087722f",
+        "throughSeq": 28
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "927c9772-4412-4d8d-b826-30b6893ca447",
+      "commandId": "d9a806f2-5f96-4c2f-ba13-63ab3f840823",
+      "seq": 30,
+      "recordedAt": "2026-10-06T09:11:40.480Z",
+      "actor": "Камиль",
+      "type": "comment.created",
+      "payload": {
+        "id": "52ef20f9-e68f-4aa4-8b27-624ff5341f6f",
+        "threadId": "t1",
+        "parentId": null,
+        "actor": "Камиль",
+        "body": "@claude/reviewer Проверь после подключения.",
+        "snapshotId": "f2886bc7-1385-44f4-9b07-bf90f087722f",
+        "throughSeq": 29
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "b549777f-a9e9-4d63-9987-66f4330bc8bf",
+      "commandId": "3d74927a-9dc3-49d6-8a24-525800ea0fff",
+      "seq": 31,
+      "recordedAt": "2026-10-06T09:11:40.483Z",
+      "actor": "Система",
+      "type": "agent.requested",
+      "payload": {
+        "id": "3ee4f160-655c-4a42-8187-00e15a3b05a9",
+        "threadId": "t1",
+        "commentId": "52ef20f9-e68f-4aa4-8b27-624ff5341f6f",
+        "agent": "@claude/reviewer",
+        "snapshotId": "f2886bc7-1385-44f4-9b07-bf90f087722f",
+        "throughSeq": 30,
+        "route": "native-child"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "15344112-008e-4694-b828-7e49991862aa",
+      "commandId": "f68e339a-295a-4816-9268-889f85255376",
+      "seq": 32,
+      "recordedAt": "2026-10-06T09:11:43.419Z",
+      "actor": "@claude/reviewer",
+      "type": "agent.status",
+      "payload": {
+        "id": "3ee4f160-655c-4a42-8187-00e15a3b05a9",
+        "status": "parent-accepted",
+        "receipt": "parent-accepted"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "932873a8-4ffe-4801-bb95-6dfde8565c16",
+      "commandId": "c6b85be7-4acb-4bc2-b5d3-b0c23de243de",
+      "seq": 33,
+      "recordedAt": "2026-10-06T09:11:43.920Z",
+      "actor": "@claude/reviewer",
+      "type": "agent.status",
+      "payload": {
+        "id": "3ee4f160-655c-4a42-8187-00e15a3b05a9",
+        "status": "child-confirmed",
+        "receipt": "child-confirmed"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "340f0e4a-e3c7-497e-8e5c-2092c836e72b",
+      "commandId": "41a423a7-9337-4720-be5a-47924fc614ef",
+      "seq": 34,
+      "recordedAt": "2026-10-06T09:11:44.620Z",
+      "actor": "@claude/reviewer",
+      "type": "agent.status",
+      "payload": {
+        "id": "3ee4f160-655c-4a42-8187-00e15a3b05a9",
+        "status": "running"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "7910cb90-70d2-4095-b54a-bd97a31abaf3",
+      "commandId": "8672935b-53e0-4bb5-b812-064515e97f85",
+      "seq": 35,
+      "recordedAt": "2026-10-06T09:11:45.620Z",
+      "actor": "Claude · reviewer",
+      "type": "comment.created",
+      "payload": {
+        "id": "2b7ba8c1-2b02-4cdb-b682-e10e9cc80a17",
+        "threadId": "t1",
+        "parentId": "52ef20f9-e68f-4aa4-8b27-624ff5341f6f",
+        "actor": "Claude · reviewer",
+        "body": "В этом фрагменте я бы отдельно зафиксировал границу гарантии: сохранение комментария и получение его агентом — разные состояния. Снимок и requestId позволяют сохранить контекст при повторе. Это демонстрационный ответ reviewer.",
+        "snapshotId": "f2886bc7-1385-44f4-9b07-bf90f087722f",
+        "throughSeq": 30,
+        "requestId": "3ee4f160-655c-4a42-8187-00e15a3b05a9",
+        "responderKind": "native-child"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "c7f8c814-9ba7-4a6b-a170-703b28b678ca",
+      "commandId": "053b28f2-2740-4799-8e5f-9523848b3a4e",
+      "seq": 36,
+      "recordedAt": "2026-10-06T09:11:45.626Z",
+      "actor": "Claude · reviewer",
+      "type": "agent.status",
+      "payload": {
+        "id": "3ee4f160-655c-4a42-8187-00e15a3b05a9",
+        "status": "completed",
+        "receipt": "child-replied"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "eventId": "79785c06-c3be-491d-99a0-b14bd88c7838",
+      "commandId": "9966fa65-f19c-4029-ab24-53af939ffa96",
+      "seq": 37,
+      "recordedAt": "2026-10-06T09:11:45.696Z",
+      "actor": "Камиль",
+      "type": "storage.selected",
+      "payload": {
+        "documentId": "doc-demo",
+        "folderId": "demo-documents",
+        "mode": "sidecar"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "discuss-ux-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test domain.test.mjs",
+    "test:browser": "node browser.test.mjs",
+    "start": "python3 server.py"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

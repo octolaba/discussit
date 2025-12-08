@@ -1,0 +1,155 @@
+{
+  "checkedAt": "2026-10-06T09:11:59.783Z",
+  "scope": "Research, upper-level design/plan, visualization, reviewed stub UX prototype. Production integration is future planned work, not claimed implemented.",
+  "allRequestedDeliverablesVerified": true,
+  "requirements": [
+    {
+      "requirement": "Исследование Agent-Native и Plannotator",
+      "evidence": "Discuss — источники и выбор основы.md; primary docs + pinned Agent-Native source",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Верхнеуровневая архитектура",
+      "evidence": "Discuss — архитектура и план.md: Архитектура; architecture.html",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "План реализации",
+      "evidence": "Discuss — архитектура и план.md: Последовательность реализации и критерии выхода",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Компромиссы и альтернативы",
+      "evidence": "Обe исследовательские заметки: Решения и альтернативы; Сравнение путей",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Открытие текстового файла",
+      "evidence": "Browser checks: actual UTF-8 file input; arbitrary selection; .md seed + .txt import",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "macOS Обсудить и CLI annotate",
+      "evidence": "Plan: Quick Action/CLI contract; browser checks: Finder/CLI simulated entry",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Совместные комментарии с агентами в реальном времени",
+      "evidence": "Browser checks: stub response after submit, reply routing, disconnect/queue/unknown; plan: real harness adapters",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Упоминания специализированных native subagents",
+      "evidence": "Official Codex/Claude references; plan: parent bridge and three receipts; demo: both specialists, native receipt and parent fallback",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "История вместе со snapshot",
+      "evidence": "Browser checks: export/import/reload, S1 context after S2; domain snapshot/replay tests",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Старый контекст после изменения",
+      "evidence": "Browser checks: external edit and origin context, highlighted CRLF selection+reload",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Resolve/reopen",
+      "evidence": "Browser branch/resolve/reopen scenario; historical reducer test",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Replies и ветки",
+      "evidence": "Browser direct reply and implicit recipient; independent branch with origin link",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Реакции",
+      "evidence": "Browser reaction add/remove; historical reducer check",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Хронологическое восстановление",
+      "evidence": "Browser as-of #4 hides future reply and disables mutations; pure reducer tests",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "События и подписки",
+      "evidence": "Browser pause/cursor/catch-up/filter; plan SSE/durable cursors/outbox/ack",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Хранение рядом или central",
+      "evidence": "Plan: per-folder sidecar and one central store; demo folder preference + portable archive (physical store explicitly stubbed)",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Визуализация для онбординга",
+      "evidence": "architecture.html: interactive four-state scenario, inline SVG, alternatives and milestones; light/dark screenshots",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Ревью Claude Fable 5.1 xhigh",
+      "evidence": "review/round-1.json, round-2.json, round-3.json; success modelUsage claude-fable-5-1; exact effort invocation; round 3 blockers closed",
+      "status": "verified at requested research/prototype scope"
+    },
+    {
+      "requirement": "Дешёвый проработанный UX-прототип на стабах",
+      "evidence": "Zero runtime npm deps; vanilla HTML/CSS/JS + Python static preview; 11 model tests and 22 browser scenarios; all environmental stubs visibly labeled",
+      "status": "verified at requested research/prototype scope"
+    }
+  ],
+  "browserResult": {
+    "at": "2026-10-06T09:11:59.783Z",
+    "browser": "154.0.8037.98",
+    "viewport": [
+      1440,
+      900
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "passed": 22,
+    "checks": [
+      "Initial document, anchored seed discussion and visible stub label",
+      "Real text selection → new thread → mentioned specialist stub → anchored reply",
+      "Human reply to agent automatically continues the conversation without another @",
+      "Independent branch, origin link, resolve and reopen",
+      "Reaction add/remove persists as separate events",
+      "External edit creates S2; old anchor retains S1 and opens original context",
+      "as-of restores only past comments and locks mutations/version selector; return to live",
+      "Paused event subscription holds cursor, catches up, and filters events",
+      "Disconnected agent request waits and resumes exactly one stub response",
+      "Sidecar preference is explicit and labeled as simulated storage",
+      "Downloaded archive restores snapshots/events and survives a browser reload",
+      "Actual UTF-8 file input, Unicode filename, emoji and CRLF selection",
+      "CRLF second selection across newline with existing highlight and reload preserves full journal",
+      "Finder and CLI simulations reopen the same document without duplicate identity",
+      "Native child receipts and parent fallback are distinct in the visible UX and journal",
+      "Disconnect after parent receipt becomes unknown and requires explicit retry with duplicate-risk explanation",
+      "Reload reconciles accepted request to unknown rather than silently retrying",
+      "Unsent queued request resumes once after reload, unlike acknowledged work",
+      "Invalid stored history is backed up, exposed in recovery banner, and never overwritten by seed",
+      "390px layout has no horizontal overflow and demo controls remain accessible",
+      "Self-contained architecture scene switching, SVG, light and dark render",
+      "No browser page errors across the exercised paths"
+    ],
+    "errors": []
+  },
+  "files": {
+    "architecture.html": "b6eada5d4981915032556adab183f410f8fc9c85c47f4080c82257f29aba9595",
+    "Discuss — архитектура и план.md": "b47dafe48a24a4bbb02e0d271050fac0a25c97eefe1d3a46ad13194bd6c85217",
+    "Discuss — запуск и проверка.md": "9d7f9fd35920174e06f94105a40a4076e0562b9e58e6dd32682bb0aec527906d",
+    "Discuss — источники и выбор основы.md": "31ff703067375b373be0c3aff1d05d2c578578d74444b806b9d8f1b8d9f89aa0",
+    "prototype/server.py": "120e36989f534202f59f1776af1f116dfdf40cea8f45723ddec03f568e7d003b",
+    "prototype/index.html": "b55a8e9e199753fd74c9bd34a49a3c68efd9b9cedf557ef1b2b592e271d8db37",
+    "prototype/domain.test.mjs": "ece4b0f507e450583f5c9974471c4db2940f920e999f08866b5373d828e08211",
+    "prototype/browser.test.mjs": "e0be99702256375250f8c83e2f51cfed470a2308fa9a0d2b61b0ef9f47b8ca55",
+    "prototype/domain.mjs": "c2bcbdcf0d8c4593d53ebc80fef458a3fabfe175ea89f99f2a9e38b3542ce9d5",
+    "prototype/style.css": "e096ae286e7d275f6b1dca2c6ba60601408c7aa5b385011eb10ef7ad994c4500",
+    "prototype/app.mjs": "df42f078ae5b8c8b91595f61bd0aff66cbcddfeecc197a217da563dd2e55443c"
+  },
+  "plannotator": "http://localhost:53592",
+  "prototype": "http://127.0.0.1:47831/prototype/"
+}

@@ -1,0 +1,15 @@
+Продолжаем цикл ревью того же результата. Переоткрой актуальные «Discuss — архитектура и план.md» и «Discuss — источники и выбор основы.md», прочитай новый architecture.html и prototype/{app.mjs,domain.mjs,index.html,style.css,domain.test.mjs,browser.test.mjs}. Результаты реального браузерного прогона лежат в review/browser-results.json (16 scenarios PASS), визуальный desktop screenshot — review/screenshots/prototype-desktop.png. Можешь прочитать screenshot через Read. Сам runtime tests не запускай и не утверждай, что запускал. Ты независимый reviewer, не редактируй файлы.
+Изменения по первому раунду:
+R1: найден официальный источник Codex Subagents с custom named roles и parent routing (https://learn.chatgpt.com/docs/agent-configuration/subagents). Добавлены три receipts parent-accepted/child-confirmed/child-replied, явный parent-fallback, unavailable до probe. Требование пользователя native children сохранено, отдельные сессии не маскируются под детей.
+R2: выбор A (core SQLite) или B (core PGlite+kit projections одна транзакция) явно фиксируется на spike. Никаких двух источников истины.
+R3: as-of выбирает бывший head, выключает selector/mutations; S1 в настоящем показывает текущее обсуждение. Capture owns time.
+R4: human reply агенту неявно маршрутизируется ему (в прототипе тоже); agent→agent depth 0.
+R5: read_snapshot по fixed snapshotId, explicit context refresh; restricted allowlist parent+children.
+R6: per-folder sidecar вместо per-document; один central store. Не убрали sidecar из planned scope, это прямое требование пользователя. Перенос одного файла не обещает перенос соседней БД.
+R7: matcher projections derived cache versioned, confirmed persisted; BOM отдельный флаг, не координата.
+R8: reconcile всех nonterminal, imported requests не вызываются автоматически, одна outbox с двумя transports.
+R9: nullable documentId store event purge + gaps/seq nonreuse; future gate.
+R10: UX first, четыре bounded yes/no spikes.
+R11: таблица actor permissions, allowlisted comment/reply/react/fork агентам; fork оставлен как обычное участие в разговоре, destructive/admin запрещены.
+R12: визуализация и прототип теперь существуют и проверены браузером (включая mobile, export/import, emoji, selection, branches, agent reply, offline, replay).
+Проверь закрытие findings и новые существенные проблемы. Не требуй реализовать production integrations в дешёвом prototype. Но честность UX и работоспособность основных демонстрируемых сценариев обязательны. Укажи blockers vs optional polish. Дай verdict о готовности research+plan+visualization+stub prototype как результата пользователя. До 1300 слов.

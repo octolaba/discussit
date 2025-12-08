@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T09:11:59.783Z",
+  "browser": "154.0.8037.98",
+  "viewport": [
+    1440,
+    900
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "passed": 22,
+  "checks": [
+    "Initial document, anchored seed discussion and visible stub label",
+    "Real text selection → new thread → mentioned specialist stub → anchored reply",
+    "Human reply to agent automatically continues the conversation without another @",
+    "Independent branch, origin link, resolve and reopen",
+    "Reaction add/remove persists as separate events",
+    "External edit creates S2; old anchor retains S1 and opens original context",
+    "as-of restores only past comments and locks mutations/version selector; return to live",
+    "Paused event subscription holds cursor, catches up, and filters events",
+    "Disconnected agent request waits and resumes exactly one stub response",
+    "Sidecar preference is explicit and labeled as simulated storage",
+    "Downloaded archive restores snapshots/events and survives a browser reload",
+    "Actual UTF-8 file input, Unicode filename, emoji and CRLF selection",
+    "CRLF second selection across newline with existing highlight and reload preserves full journal",
+    "Finder and CLI simulations reopen the same document without duplicate identity",
+    "Native child receipts and parent fallback are distinct in the visible UX and journal",
+    "Disconnect after parent receipt becomes unknown and requires explicit retry with duplicate-risk explanation",
+    "Reload reconciles accepted request to unknown rather than silently retrying",
+    "Unsent queued request resumes once after reload, unlike acknowledged work",
+    "Invalid stored history is backed up, exposed in recovery banner, and never overwritten by seed",
+    "390px layout has no horizontal overflow and demo controls remain accessible",
+    "Self-contained architecture scene switching, SVG, light and dark render",
+    "No browser page errors across the exercised paths"
+  ],
+  "errors": []
+}

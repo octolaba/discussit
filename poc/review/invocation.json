@@ -1,0 +1,33 @@
+{
+  "model": "claude-fable-5-1",
+  "effort": "xhigh",
+  "sessionId": "609f1f74-5a85-47c1-a15c-37a31557a0d6",
+  "round1": "round-1.json",
+  "cli": "Claude Code 2.1.290",
+  "permissionMode": "dontAsk",
+  "tools": [
+    "Read",
+    "Grep",
+    "Glob"
+  ],
+  "rounds": [
+    {
+      "prompt": "round-1-prompt.txt",
+      "result": "round-1.json",
+      "model": "claude-fable-5-1",
+      "effort": "xhigh"
+    },
+    {
+      "prompt": "round-2-prompt.txt",
+      "result": "round-2.json",
+      "model": "claude-fable-5-1",
+      "effort": "xhigh"
+    },
+    {
+      "prompt": "round-3-prompt.txt",
+      "result": "round-3.json",
+      "model": "claude-fable-5-1",
+      "effort": "xhigh"
+    }
+  ]
+}
